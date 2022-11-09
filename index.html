@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Dary Léo">
+        <meta name="description" content="Bienvenue au Apex random generator">
+        <!--
+        <meta property="og:image" content="https://developer.mozilla.org/static/img/opengraph-logo.png">
+        <meta property="og:description" content="MDN Web Docs fournit des
+        informations sur les technologies web ouvertes comme HTML, CSS et les API
+        utilisées pour les sites web et les applications web. On y trouve également
+        de la documentation destinées aux développeurs à propos des produits
+        Mozilla tels que les outils de développement de Firefox.">
+        <meta property="og:title" content="Mozilla Developer Network">
+
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+        <script src="mon-fichier-js.js"></script>
+
+        -->
+        <title> RANDOM APEX GENERATOR </title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <!-- Name of Teammate-->
+        <!--
+        <label for="dwarfs">Sélectionnez vos legends  :</label>
+        <select multiple id="dwarfs">
+          <option selected value="bloodhound">bloodhound</option>
+          <option selected value="gibraltar">gibraltar</option>
+          <option selected value="lifeline">lifeline</option>
+          <option selected value="pathfinder">pathfinder</option>
+          <option selected value="wraith">wraith</option>
+          <option selected value="bangalore">bangalore</option>
+          <option selected value="caustic">caustic</option>
+        </select>
+        -->
+        <h1>
+            Tourne ton ecran en paysage
+        </h1>
+        <div class="wrapper">
+            <div class="Name">
+                <label for="fname">Teammate n°1:</label>
+                <input type="text" id="name1" />
+            </div>
+            <div class="Name">
+                <label for="fname">Teammate n°2:</label>
+                <input type="text" id="name2" />
+            </div>
+            <div class="Name">
+                <label for="fname">Teammate n°3:</label>
+                <input type="text" id="name3" />
+            </div>
+        </div>
+        <!--Generate-->
+        <div class="wrapper">
+            <button class="red_button" id="generate"><span>GO!</span></button>     
+        </div>
+        <!-- Selector-->
+        <div class="wrapper">
+            <div class="box"><img src="images/random1.gif" alt="Teammate N°1" class="cover" id="team1"></div>
+            <div class="box"><img src="images/random2.gif" alt="Teammate N°2" class="cover" id="team2"></div>
+            <div class="box"><img src="images/random3.gif" alt="Teammate N°3" class="cover" id="team3"></div>
+        </div>
+        <div class="dropdown" display="flex">
+            <button class="dropbtn">Legends Select 1
+            <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <table id="LegendeSelector1">
+                    <tbody>
+                        <tr>
+                            <td><label><input type="checkbox" name="checkbox" value="bloodhound" checked>bloodhound</label></td>
+                            <td><label><input type="checkbox" name="checkbox" value="gibraltar"checked>gibraltar</label></td>
+                            <td><label><input type="checkbox" name="checkbox" value="lifeline" checked>lifeline</label></td>
+                            <td><label><input type="checkbox" name="checkbox" value="pathfinder" checked>pathfinder</label></td>
+                            <td><label><input type="checkbox" name="checkbox" value="wraith" checked>wraith</label></td>
+                        </tr>
+                        <tr>
+                            <td><label><input type="checkbox" name="checkbox" value="bangalore" checked>bangalore</label></td>
+                            <td><label><input type="checkbox" name="checkbox" value="caustic" checked>caustic</label></td>
+                            <td><label><input type="checkbox" name="checkbox" value="mirage" checked>mirage</label></td>
+                            <td><label><input type="checkbox" name="checkbox" value="octane" checked>octane</label></td>
+                            <td><label><input type="checkbox" name="checkbox" value="wattson" checked>wattson</label></td>
+                        </tr>
+                        <tr>
+                            <td><label><input type="checkbox" name="checkbox" value="crypto" checked>crypto</label></td>
+                            <td><label><input type="checkbox" name="checkbox" value="revenant" checked>revenant</label></td>
+                            <td><label><input type="checkbox" name="checkbox" value="loba" checked>loba</label></td>
+                            <td><label><input type="checkbox" name="checkbox" value="rampart" checked>rampart</label></td>
+                            <td><label><input type="checkbox" name="checkbox" value="horizon" checked>horizon</label></td>
+                        </tr>
+                        <tr>
+                            <td><label><input type="checkbox" name="checkbox" value="fuse" checked>fuse</label></td>
+                            <td><label><input type="checkbox" name="checkbox" value="valkyrie" checked>valkyrie</label></td>
+                            <td><label><input type="checkbox" name="checkbox" value="seer" checked>seer</label></td>
+                            <td><label><input type="checkbox" name="checkbox" value="ash" checked>ash</label></td>
+                            <td><label><input type="checkbox" name="checkbox" value="madmaggie" checked>madmaggie</label></td>
+                        </tr>
+                        <tr>
+                            <td><label><input type="checkbox" name="checkbox" value="newcastle" checked>newcastle</label></td>
+                            <td><label><input type="checkbox" name="checkbox" value="vantage" checked>vantage</label></td>
+                            <td><label><input type="checkbox" name="checkbox" value="catalyst" checked>catalyst</label></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Legends Select 2
+            <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <table id="LegendeSelector2">
+                    <tbody>
+                        <tr>
+                            <td><label><input type="checkbox" name="checkbox" value="bloodhound" checked>bloodhound</label></td>
+                            <td><label><input type="checkbox" name="checkbox" value="gibraltar"checked>gibraltar</label></td>
+                            <td><label><input type="checkbox" name="checkbox" value="lifeline" checked>lifeline</label></td>
+                            <td><label><input type="checkbox" name="checkbox" value="pathfinder" checked>pathfinder</label></td>
+                            <td><label><input type="checkbox" name="checkbox" value="wraith" checked>wraith</label></td>
+                        </tr>
+                        <tr>
+                            <td><label><input type="checkbox" name="checkbox" value="bangalore" checked>bangalore</label></td>
+                            <td><label><input type="checkbox" name="checkbox" value="caustic" checked>caustic</label></td>
+                            <td><label><input type="checkbox" name="checkbox" value="mirage" checked>mirage</label></td>
+                            <td><label><input type="checkbox" name="checkbox" value="octane" checked>octane</label></td>
+                            <td><label><input type="checkbox" name="checkbox" value="wattson" checked>wattson</label></td>
+                        </tr>
+                        <tr>
+                            <td><label><input type="checkbox" name="checkbox" value="crypto" checked>crypto</label></td>
+                            <td><label><input type="checkbox" name="checkbox" value="revenant" checked>revenant</label></td>
+                            <td><label><input type="checkbox" name="checkbox" value="loba" checked>loba</label></td>
+                            <td><label><input type="checkbox" name="checkbox" value="rampart" checked>rampart</label></td>
+                            <td><label><input type="checkbox" name="checkbox" value="horizon" checked>horizon</label></td>
+                        </tr>
+                        <tr>
+                            <td><label><input type="checkbox" name="checkbox" value="fuse" checked>fuse</label></td>
+                            <td><label><input type="checkbox" name="checkbox" value="valkyrie" checked>valkyrie</label></td>
+                            <td><label><input type="checkbox" name="checkbox" value="seer" checked>seer</label></td>
+                            <td><label><input type="checkbox" name="checkbox" value="ash" checked>ash</label></td>
+                            <td><label><input type="checkbox" name="checkbox" value="madmaggie" checked>madmaggie</label></td>
+                        </tr>
+                        <tr>
+                            <td><label><input type="checkbox" name="checkbox" value="newcastle" checked>newcastle</label></td>
+                            <td><label><input type="checkbox" name="checkbox" value="vantage" checked>vantage</label></td>
+                            <td><label><input type="checkbox" name="checkbox" value="catalyst" checked>catalyst</label></td>
+                        </tr>
+                    </tbody>
+                </table>                    
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Legends Select 3
+            <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <table id="LegendeSelector3">
+                    <tbody>
+                        <tr>
+                            <td><label><input type="checkbox" name="checkbox" value="bloodhound" checked>bloodhound</label></td>
+                            <td><label><input type="checkbox" name="checkbox" value="gibraltar"checked>gibraltar</label></td>
+                            <td><label><input type="checkbox" name="checkbox" value="lifeline" checked>lifeline</label></td>
+                            <td><label><input type="checkbox" name="checkbox" value="pathfinder" checked>pathfinder</label></td>
+                            <td><label><input type="checkbox" name="checkbox" value="wraith" checked>wraith</label></td>
+                        </tr>
+                        <tr>
+                            <td><label><input type="checkbox" name="checkbox" value="bangalore" checked>bangalore</label></td>
+                            <td><label><input type="checkbox" name="checkbox" value="caustic" checked>caustic</label></td>
+                            <td><label><input type="checkbox" name="checkbox" value="mirage" checked>mirage</label></td>
+                            <td><label><input type="checkbox" name="checkbox" value="octane" checked>octane</label></td>
+                            <td><label><input type="checkbox" name="checkbox" value="wattson" checked>wattson</label></td>
+                        </tr>
+                        <tr>
+                            <td><label><input type="checkbox" name="checkbox" value="crypto" checked>crypto</label></td>
+                            <td><label><input type="checkbox" name="checkbox" value="revenant" checked>revenant</label></td>
+                            <td><label><input type="checkbox" name="checkbox" value="loba" checked>loba</label></td>
+                            <td><label><input type="checkbox" name="checkbox" value="rampart" checked>rampart</label></td>
+                            <td><label><input type="checkbox" name="checkbox" value="horizon" checked>horizon</label></td>
+                        </tr>
+                        <tr>
+                            <td><label><input type="checkbox" name="checkbox" value="fuse" checked>fuse</label></td>
+                            <td><label><input type="checkbox" name="checkbox" value="valkyrie" checked>valkyrie</label></td>
+                            <td><label><input type="checkbox" name="checkbox" value="seer" checked>seer</label></td>
+                            <td><label><input type="checkbox" name="checkbox" value="ash" checked>ash</label></td>
+                            <td><label><input type="checkbox" name="checkbox" value="madmaggie" checked>madmaggie</label></td>
+                        </tr>
+                        <tr>
+                            <td><label><input type="checkbox" name="checkbox" value="newcastle" checked>newcastle</label></td>
+                            <td><label><input type="checkbox" name="checkbox" value="vantage" checked>vantage</label></td>
+                            <td><label><input type="checkbox" name="checkbox" value="catalyst" checked>catalyst</label></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <script src="script/main.js"></script>
+        <script src="script/button.js"></script>
+    </body>
+</html>
