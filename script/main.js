@@ -280,9 +280,9 @@ function generate() {
     team2.src = `images/random2.gif`
     team3.src = `images/random3.gif`
 
-    timeout1 = setTimeout(changeimage.bind(null,team1,`images/${NameNumber[choose1]}.png`),0)
-    timeout2 = setTimeout(changeimage.bind(null,team2,`images/${NameNumber[choose2]}.png`),0)
-    timeout3 = setTimeout(changeimage.bind(null,team3,`images/${NameNumber[choose3]}.png`),0)
+    timeout1 = setTimeout(changeimage.bind(null,team1,`images/${NameNumber[choose1]}.png`),1000)
+    timeout2 = setTimeout(changeimage.bind(null,team2,`images/${NameNumber[choose2]}.png`),3000)
+    timeout3 = setTimeout(changeimage.bind(null,team3,`images/${NameNumber[choose3]}.png`),6000)
 }
 /* TEST
 for (let index = 0; index < 10000; index++) {
