@@ -305,18 +305,23 @@ function generate2() {
     } else {
         choose1 = generateFirstElement(MaxSort)
     }
-    choose2 = generateSecondElement(MaxSort,choose1)
-    choose3 = generateThirdElement(MaxSort,choose1,choose2)
+    try {
+        choose2 = generateSecondElement(MaxSort,choose1)
+        choose3 = generateThirdElement(MaxSort,choose1,choose2)   
+        tempList = [choose1,choose2,choose3]
 
-    tempList = [choose1,choose2,choose3]
-
-    let OrderChoose = [-1,-1,-1]
-    for (let index = 0; index < OrderChoose.length; index++) {
-        OrderChoose[indice[index]] = tempList[index]
+        let OrderChoose = [-1,-1,-1]
+        for (let index = 0; index < OrderChoose.length; index++) {
+            OrderChoose[indice[index]] = tempList[index]
+        }
+        timeout1 = setTimeout(changeimage.bind(null,team1,`images/${NameNumber[OrderChoose[0]]}.png`),1000)
+        timeout2 = setTimeout(changeimage.bind(null,team2,`images/${NameNumber[OrderChoose[1]]}.png`),3000)
+        timeout3 = setTimeout(changeimage.bind(null,team3,`images/${NameNumber[OrderChoose[2]]}.png`),6000)
+    } catch (error) {
+        max1=[]
+        max2=[]
+        max3=[]
     }
-    timeout1 = setTimeout(changeimage.bind(null,team1,`images/${NameNumber[OrderChoose[0]]}.png`),1000)
-    timeout2 = setTimeout(changeimage.bind(null,team2,`images/${NameNumber[OrderChoose[1]]}.png`),3000)
-    timeout3 = setTimeout(changeimage.bind(null,team3,`images/${NameNumber[OrderChoose[2]]}.png`),6000)
     
 }
 

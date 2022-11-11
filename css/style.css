@@ -1,3 +1,42 @@
+.Player {
+  text-align: center;
+  color: black; 
+}
+
+.Player.p1 {
+  background-color: red;
+}
+
+.Player.p2 {
+  background-color: green;
+}
+
+.Player.p3 {
+  background-color: cyan;
+}
+
+body {
+  background-image:url("apex_15.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.label {
+  color: white;
+  padding: 8px;
+}
+
+.player1 {
+  background-color: #04AA6D;
+}
+
+.player2 {
+  background-color: #2196F3;
+}
+
+.player3 {
+  background-color: #f44336;
+}
 .wrapper {
     display: flex;
     align-items: center;
@@ -18,9 +57,9 @@ img {
 }
 
 .red_button { 
-    border-radius: 100%; 
-    width: 100px;
-    height: 100px;
+    border-radius: 50%; 
+    width:200px;
+    height: 200px;
     border: none;
     color: white;
     font-family: Avenir, Arial, sans-serif;
@@ -37,6 +76,7 @@ img {
     text-align: center;
     -webkit-user-select: none;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
+    margin: 0.3em;
   }
 
   .red_button span { position: relative; }
@@ -58,7 +98,7 @@ img {
   border: none;
   outline: none;
   padding: 14px 16px;
-  background-color: inherit;
+  background-color: rgb(56, 130, 136);
   font-family: inherit; /* Important for vertical align on mobile phones */
   margin: 0; /* Important for vertical align on mobile phones */
 }
