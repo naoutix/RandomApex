@@ -15,6 +15,32 @@
   background-color: cyan;
 }
 
+.LNameP3 {
+  background-color: rgba(8, 238, 238, 0.823);
+  text-align: center;
+  font-size: larger;
+  height: 100%;
+  width: 95%;
+  color: black;
+}
+.LNameP2 {
+  background-color: rgba(8, 238, 19, 0.823);
+  text-align: center;
+  font-size: larger;
+  height: 100%;
+  width: 95%;
+  color: rgb(0, 0, 0);
+}
+.LNameP1 {
+  background-color: rgba(238, 31, 8, 0.823);
+  text-align: center;
+  font-size: larger;
+  height: 100%;
+  width: 95%;
+  color: black;
+}
+
+
 body {
   background-image:url("apex_15.png");
   background-size: cover;

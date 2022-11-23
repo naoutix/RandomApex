@@ -40,6 +40,9 @@ const team3 = document.getElementById('team3')
 const myTable1 = document.getElementById("LegendeSelector1");
 const myTable2 = document.getElementById("LegendeSelector2");
 const myTable3 = document.getElementById("LegendeSelector3");
+const name1 = document.getElementById("OutP1")
+const name2 = document.getElementById("OutP2")
+const name3 = document.getElementById("OutP3")
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
@@ -109,8 +112,9 @@ function reset(tab,legendselector){
     }
 }
 
-function changeimage(contexte,path) {
-    contexte.src = path
+function changeimage(contexte,path,label) {
+    contexte.src = `images/${path}.png`
+    label.innerHTML = path
 }
 
 function sort(max1,max2,max3){
@@ -262,7 +266,9 @@ function generate2() {
     team2.src = `images/random2.gif`
     team3.src = `images/random3.gif`
 
-
+    name1.innerHTML = "???"
+    name2.innerHTML = "???"
+    name3.innerHTML = "???"
     max1 = reset(max1,myTable1)
     max2 = reset(max2,myTable2)
     max3 = reset(max3,myTable3)
@@ -285,8 +291,8 @@ function generate2() {
     clearTimeout(timeout1)
     clearTimeout(timeout2)
     clearTimeout(timeout3)
-    console.log(`${max1}!!${max2}!!${max3}`)
-    console.log(`${max1.length}!!${max2.length}!!${max3.length}`)
+    //console.log(`${max1}!!${max2}!!${max3}`)
+    //console.log(`${max1.length}!!${max2.length}!!${max3.length}`)
     var {indice , MaxSort} = sort(max1,max2,max3)  
     if (MaxSort[0].length <=3){
         var indexprior = -1
@@ -314,9 +320,9 @@ function generate2() {
         for (let index = 0; index < OrderChoose.length; index++) {
             OrderChoose[indice[index]] = tempList[index]
         }
-        timeout1 = setTimeout(changeimage.bind(null,team1,`images/${NameNumber[OrderChoose[0]]}.png`),1000)
-        timeout2 = setTimeout(changeimage.bind(null,team2,`images/${NameNumber[OrderChoose[1]]}.png`),3000)
-        timeout3 = setTimeout(changeimage.bind(null,team3,`images/${NameNumber[OrderChoose[2]]}.png`),6000)
+        timeout1 = setTimeout(changeimage.bind(null,team1,NameNumber[OrderChoose[0]],name1),1000)
+        timeout2 = setTimeout(changeimage.bind(null,team2,NameNumber[OrderChoose[1]],name2),3000)
+        timeout3 = setTimeout(changeimage.bind(null,team3,NameNumber[OrderChoose[2]],name3),6000)
     } catch (error) {
         max1=[]
         max2=[]

@@ -18,13 +18,12 @@
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
-        <h1>
-            Tourne ton ecran en paysage
-        </h1>
-        <!--Generate-->
+        <!--Generate Button-->
         <div class="wrapper">
             <button class="red_button" id="generate"><span>GO!</span></button>     
         </div>
+
+        <!--Name Player-->
         <div class="wrapper">
             <div class="Name">
                 <input type="text" class="Player p1" id="name1" placeholder="Player 1" />
@@ -36,12 +35,21 @@
                 <input type="text" class="Player p3" id="name3" placeholder="Player 3"/>
             </div>
         </div>
-        <!-- Selector-->
+
+        <!-- Selector Roulette Front-->
         <div class="wrapper">
             <div class="box"><img src="images/random1.gif" alt="Teammate N°1" class="cover" id="team1"></div>
             <div class="box"><img src="images/random2.gif" alt="Teammate N°2" class="cover" id="team2"></div>
             <div class="box"><img src="images/random3.gif" alt="Teammate N°3" class="cover" id="team3"></div>
         </div>
+
+        <!-- Name Roulette display-->
+        <div class="wrapper">
+            <label class="LNameP1" id="OutP1"> ??? </label>
+            <label class="LNameP2" id="OutP2"> ??? </label>
+            <label class="LNameP3" id="OutP3"> ??? </label>
+        </div>
+        <!-- Selector legends -->
         <div class="dropdown" display="flex">
             <button class="dropbtn">Legends Select 1
             <i class="fa fa-caret-down"></i>
@@ -174,6 +182,8 @@
                 </table>
             </div>
         </div>
+
+        <!-- Script-->
         <script src="script/main.js"></script>
         <script src="script/button.js"></script>
     </body>
