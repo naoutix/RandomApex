@@ -18,6 +18,19 @@
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
+        <!--SWITCH MODE-->
+        <div class="wrapper">
+            <div class="Name">
+                <label> SWITCH MODE TRIO/DUO </label>
+            </div>
+        </div>
+        <div class="wrapper">
+            <label class="toggle">
+                <input type="checkbox" id="mode" checked >
+                <span class="slider"></span>
+                <span class="labels" data-on="TRIO" data-off="DUO"></span>
+              </label>
+        </div>
         <!--Generate Button-->
         <div class="wrapper">
             <button class="red_button" id="generate"><span>GO!</span></button>     
@@ -26,13 +39,13 @@
         <!--Name Player-->
         <div class="wrapper">
             <div class="Name">
-                <input type="text" class="Player p1" id="name1" placeholder="Player 1" />
+                <input type="text" class="Player p1" id="name1" placeholder="< Player 1 name>" />
             </div>
             <div class="Name">
-                <input type="text" class="Player p2" id="name2" placeholder="Player 2" />
+                <input type="text" class="Player p2" id="name2" placeholder="< Player 2 name>" />
             </div>
-            <div class="Name">
-                <input type="text" class="Player p3" id="name3" placeholder="Player 3"/>
+            <div class="Name" id="ThirdPlayerName">
+                <input type="text" class="Player p3" id="name3" placeholder="< Player 3 name>"/>
             </div>
         </div>
 
@@ -40,7 +53,7 @@
         <div class="wrapper">
             <div class="box"><img src="images/random1.gif" alt="Teammate N°1" class="cover" id="team1"></div>
             <div class="box"><img src="images/random2.gif" alt="Teammate N°2" class="cover" id="team2"></div>
-            <div class="box"><img src="images/random3.gif" alt="Teammate N°3" class="cover" id="team3"></div>
+            <div class="box" id="ThirdPlayerBox"><img src="images/random3.gif" alt="Teammate N°3" class="cover" id="team3"></div>
         </div>
 
         <!-- Name Roulette display-->
@@ -138,7 +151,7 @@
                 </table>                    
             </div>
         </div>
-        <div class="dropdown">
+        <div class="dropdown" id="ThirdPlayerMenu">
             <button class="dropbtn">Legends Select 3
             <i class="fa fa-caret-down"></i>
             </button>
@@ -184,7 +197,7 @@
         </div>
 
         <!-- Script-->
-        <script src="script/main.js"></script>
+        <script src="script/main.js" type="module"></script>
         <script src="script/button.js"></script>
     </body>
 </html>
