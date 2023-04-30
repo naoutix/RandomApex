@@ -85,7 +85,7 @@
   }
   .wrapper ul{
     position: absolute;
-    top: 60%;
+    top: 55%;
     left: 50%;
     height: 90%;
     width: 100%;
@@ -94,7 +94,7 @@
     text-align: center;
   }
   .wrapper ul li{
-    height: 10%;
+    height: 8%;
     margin: 15px 0;
   }
   .wrapper ul li a{

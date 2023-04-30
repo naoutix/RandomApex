@@ -84,3 +84,39 @@ function generate2() {
 
     }   
 }
+
+
+
+
+let buttonLegends1 = document.getElementById('Select1')
+let buttonLegends2 = document.getElementById('Select2')
+let buttonLegends3 = document.getElementById('Select3')
+buttonLegends1.addEventListener('click',dropdown.bind(null,"content1"))
+buttonLegends2.addEventListener('click',dropdown.bind(null,"content2"))
+buttonLegends3.addEventListener('click',dropdown.bind(null,"content3"))
+
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function dropdown(content) {
+    closeDropdown()
+    document.getElementById(content).classList.toggle("show");
+}
+
+function closeDropdown(){
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+        }
+    }
+}
+function event(event) {
+    if (!event.target.matches('.dropbtn') &&!(event.target.name == "checkbox") && !(event.target.tagName == "TD") && !(event.target.tagName == "TR")&& !(event.target.tagName == "TABLE")) {
+        closeDropdown()
+    }
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = event
