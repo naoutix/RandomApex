@@ -31,9 +31,11 @@ let game = new Game()
 
 const button = document.getElementById('generate')
 const button2 = document.getElementById('mode')
+const button3 = document.getElementById('modeWeapon')
 
 button.addEventListener('click',generate2)
 button2.addEventListener('click',changeMode)
+button3.addEventListener('click',changeModeWeapon)
 
 let mode = "Trio"
 function changeMode() {
@@ -55,6 +57,15 @@ function changeMode() {
         mode = "Duo"
     }
 }
+
+function changeModeWeapon() {
+    let weapon1 = document.getElementById('WEAPON ROULETTE')
+    if (weapon1.style.display === "none") {
+        weapon1.style.display = "block"
+    } else {
+        weapon1.style.display = "none"
+    }
+}
 /**
  * Main function
  *
@@ -73,3 +84,39 @@ function generate2() {
 
     }   
 }
+
+
+
+
+let buttonLegends1 = document.getElementById('Select1')
+let buttonLegends2 = document.getElementById('Select2')
+let buttonLegends3 = document.getElementById('Select3')
+buttonLegends1.addEventListener('click',dropdown.bind(null,"content1"))
+buttonLegends2.addEventListener('click',dropdown.bind(null,"content2"))
+buttonLegends3.addEventListener('click',dropdown.bind(null,"content3"))
+
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function dropdown(content) {
+    closeDropdown()
+    document.getElementById(content).classList.toggle("show");
+}
+
+function closeDropdown(){
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+        }
+    }
+}
+function event(event) {
+    if (!event.target.matches('.dropbtn') &&!(event.target.name == "checkbox") && !(event.target.tagName == "TD") && !(event.target.tagName == "TR")&& !(event.target.tagName == "TABLE")) {
+        closeDropdown()
+    }
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = event
