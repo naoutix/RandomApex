@@ -2,7 +2,7 @@ import {NameNumber} from "./main.js"
 export {UI};
 
 function changeimage(contexte,path,label) {
-    contexte.src = `images/${path}.png`
+    contexte.src = `images/legends/${path}.png`
     label.innerHTML = path
 }
 
@@ -72,10 +72,10 @@ class UI {
 
     updateUI(mode,numeroLegends){
         console.log(numeroLegends)
-        this.timeout1 = setTimeout(changeimage.bind(null,this.player1,NameNumber[numeroLegends[0]],name1),1000)
-        this.timeout2 = setTimeout(changeimage.bind(null,this.player2,NameNumber[numeroLegends[1]],name2),3000)
+        this.timeout1 = setTimeout(changeimage.bind(null,this.player1,NameNumber[numeroLegends[0]],this.name1),1000)
+        this.timeout2 = setTimeout(changeimage.bind(null,this.player2,NameNumber[numeroLegends[1]],this.name2),3000)
         if (mode == "Trio"){
-            this.timeout3 = setTimeout(changeimage.bind(null,this.player3,NameNumber[numeroLegends[2]],name3),6000)
+            this.timeout3 = setTimeout(changeimage.bind(null,this.player3,NameNumber[numeroLegends[2]],this.name3),6000)
         }
     }
 }

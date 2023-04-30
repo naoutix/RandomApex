@@ -152,11 +152,11 @@ class Game {
     }
 
     rebuild(){
-        legendsFree1 = []
-        legendsFree2 = []
-        legendsFree3 = []
-        choose1 = 0
-        choose2 = 0
-        choose3 = 0       
+        this.legendsFree1 = []
+        this.legendsFree2 = []
+        this.legendsFree3 = []
+        this.choose1 = 0
+        this.choose2 = 0
+        this.choose3 = 0       
     }
 }

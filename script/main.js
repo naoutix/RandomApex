@@ -31,9 +31,11 @@ let game = new Game()
 
 const button = document.getElementById('generate')
 const button2 = document.getElementById('mode')
+const button3 = document.getElementById('modeWeapon')
 
 button.addEventListener('click',generate2)
 button2.addEventListener('click',changeMode)
+button3.addEventListener('click',changeModeWeapon)
 
 let mode = "Trio"
 function changeMode() {
@@ -53,6 +55,18 @@ function changeMode() {
         ThirdPlayerOutP3.style.display = "none"
         ThirdPlayerMenu.style.display = "none"
         mode = "Duo"
+    }
+}
+
+function changeModeWeapon() {
+    let weapon1 = document.getElementById('weapon1')
+    let weapon2 = document.getElementById('weapon2')
+    if (weapon1.style.display === "none") {
+        weapon1.style.display = "block"
+        weapon2.style.display = "block"
+    } else {
+        weapon1.style.display = "none"
+        weapon2.style.display = "none"
     }
 }
 /**
