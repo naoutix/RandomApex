@@ -59,14 +59,11 @@ function changeMode() {
 }
 
 function changeModeWeapon() {
-    let weapon1 = document.getElementById('weapon1')
-    let weapon2 = document.getElementById('weapon2')
+    let weapon1 = document.getElementById('WEAPON ROULETTE')
     if (weapon1.style.display === "none") {
         weapon1.style.display = "block"
-        weapon2.style.display = "block"
     } else {
         weapon1.style.display = "none"
-        weapon2.style.display = "none"
     }
 }
 /**

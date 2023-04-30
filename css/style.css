@@ -1,112 +1,11 @@
-/*Reminder*/
-.Reminder {
-  font-weight: bold;
-  color: rgb(0, 0, 0);
-  font-size: 20px;
-  font-family: 'Courier New', Courier, monospace;
-  text-align: right;
-  margin-top: 0px;
-  margin-bottom: 0px;
-}
-
-/*Toggle */
-.Name {
-  color: white;
-}
-.toggle {
-  z-index: 0;
-  --width: 80px;
-  --height: calc(var(--width) / 3);
-
-  position: relative;
-  display: inline-block;
-  width: var(--width);
-  height: var(--height);
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
-  border-radius: var(--height);
-  cursor: pointer;
-}
-
-.toggle input {
-  display: none;
-}
-
-.toggle .slider {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: var(--height);
-  background-color: #60ff0a;
-  transition: all 0.4s ease-in-out;
-}
-
-.toggle .slider::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: calc(var(--height));
-  height: calc(var(--height));
-  border-radius: calc(var(--height) / 2);
-  background-color: #fff;
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
-  transition: all 0.4s ease-in-out;
-}
-
-.toggle input:checked+.slider {
-  background-color: #f37521;
-}
-
-.toggle input:checked+.slider::before {
-  transform: translateX(calc(var(--width) - var(--height)));
-}
-
-.toggle .labels {
-  position: absolute;
-  top: 8px;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  font-size: 12px;
-  font-family: sans-serif;
-  transition: all 0.4s ease-in-out;
-  overflow: hidden;
-}
-
-.toggle .labels::after {
-  content: attr(data-off);
-  position: absolute;
-  right: 5px;
-  color: #4d4d4d;
-  opacity: 1;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
-  transition: all 0.4s ease-in-out;
-}
-
-.toggle .labels::before {
-  content: attr(data-on);
-  position: absolute;
-  left: calc(var(--height) - var(--width) + 2px);
-  color: #ffffff;
-  opacity: 0;
-  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.4);
-  transition: all 0.4s ease-in-out;
-}
-
-.toggle input:checked~.labels::after {
-  opacity: 0;
-  transform: translateX(calc(var(--width) - var(--height)));
-}
-
-.toggle input:checked~.labels::before {
-  opacity: 1;
-  transform: translateX(calc(var(--width) - var(--height)));
-}
-
-
 /* Text */
+.Reminder{
+  text-align: right;
+  color: rgb(0, 0, 0);
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+}
+
 .Player {
   text-align: center;
   color: black; 
@@ -127,35 +26,31 @@
   background-color: cyan;
 }
 
-.LNameP3 {
+.LName {
+  text-align: center;
+  font-size: larger;
+  height: 100%;
+  width: 95%;
+  color: black;
+}
+
+.LName.P3 {
   background-color: rgba(8, 238, 238, 0.823);
-  text-align: center;
-  font-size: larger;
-  height: 100%;
-  width: 95%;
-  color: black;
 }
-.LNameP2 {
+.LName.P2 {
   background-color: rgba(8, 238, 19, 0.823);
-  text-align: center;
-  font-size: larger;
-  height: 100%;
-  width: 95%;
-  color: rgb(0, 0, 0);
 }
-.LNameP1 {
+.LName.P1 {
   background-color: rgba(238, 31, 8, 0.823);
-  text-align: center;
-  font-size: larger;
-  height: 100%;
-  width: 95%;
-  color: black;
 }
 
 
 body {
   background-image:url("apex-legends-pick-rate.jpeg");
+  background-position: center center;
+  background-attachment: fixed;
   background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .label {
@@ -182,11 +77,25 @@ body {
 
 .box {
     width: 200px;
-    height: 200px;
+    height: 100%;
 }
-.box.weapon {
-  width: 200px;
+.box.weaponName {
+  width: 200px; /* ou 95% */
   height: 100px;
+  text-align: center;
+  color: black;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  font-size: 20px;
+  height: 100%;
+  border: 3px solid black;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 img {
     height: 100%;
@@ -194,80 +103,4 @@ img {
 }
 .cover {
     object-fit: cover;
-}
-
-.red_button { 
-    z-index: 0;
-    border-radius: 50%; 
-    width:200px;
-    height: 200px;
-    border: none;
-    color: white;
-    font-family: Avenir, Arial, sans-serif;
-    font-weight: 900;
-    font-size: 2.5rem;
-    background: red;
-    text-shadow: 0 3px 1px rgba(122,17,8,.8);
-    box-shadow: 0 8px 0 rgb(183,9,0), 
-      0 15px 20px rgba(0,0,0,.35);
-    text-transform: uppercase;
-    transition: .4s all ease-in;
-    outline: none; 
-    cursor: pointer;
-    text-align: center;
-    -webkit-user-select: none;
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
-    margin: 0.3em;
-  }
-
-  .red_button span { position: relative; }
-  /* fix for IE 11 (and IE8+, although the earlier versions are harder to address) stupidly moving the inner button text on click */
-  .pressed { 
-    padding-top: 3px;
-    transform: translateY(4px);
-    box-shadow: 0 4px 0 rgb(183,0,0),
-      0 8px 6px rgba(0,0,0,.45);
-  }
-
- /* The dropdown container */
-.dropdown {
-  overflow: hidden;
-}
-/* Dropdown button */
-.dropdown .dropbtn {
-  font-size: 16px;
-  border: none;
-  outline: none;
-  padding: 14px 16px;
-  background-color: rgb(56, 130, 136);
-  font-family: inherit; /* Important for vertical align on mobile phones */
-  margin: 0; /* Important for vertical align on mobile phones */
-}
-/* Add a red background color to navbar links on hover */
-.navbar a:hover, .dropdown:hover .dropbtn {
-  background-color: red;
-}
-
-/* Dropdown content (hidden by default) */
-.dropdown-content {
-  display: none;
-  position: relative;
-  float: none;
-  background-color: #f9f9f9;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-}
-
-
-/* Add a grey background color to dropdown links on hover */
-.dropdown-content a:hover {
-  background-color: #ddd;
-}
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-table {
-  width: 100%;
 }
