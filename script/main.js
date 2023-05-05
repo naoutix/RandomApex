@@ -1,27 +1,60 @@
-// LIST LEGENDS -> MUST MATCH NAME OF IMAGES IN FOLDER images\
+// LIST LEGENDS -> MUST MATCH NAME OF IMAGES IN FOLDER images\legends
 export const NameNumber = ['bloodhound',
-                  'gibraltar',
-                  'lifeline',
-                  'pathfinder',
-                  'wraith',
-                  'bangalore',
-                  'caustic',
-                  'mirage',
-                  'octane',
-                  'wattson',
-                  'crypto',
-                  'revenant',
-                  'loba',
-                  'rampart',
-                  'horizon',
-                  'fuse',
-                  'valkyrie',
-                  'seer',
-                  'ash',
-                  'madmaggie',
-                  'newcastle',
-                  'vantage',
-                  'catalyst']
+                            'gibraltar',
+                            'lifeline',
+                            'pathfinder',
+                            'wraith',
+                            'bangalore',
+                            'caustic',
+                            'mirage',
+                            'octane',
+                            'wattson',
+                            'crypto',
+                            'revenant',
+                            'loba',
+                            'rampart',
+                            'horizon',
+                            'fuse',
+                            'valkyrie',
+                            'seer',
+                            'ash',
+                            'madmaggie',
+                            'newcastle',
+                            'vantage',
+                            'catalyst']
+
+// LIST WEAPONS -> MUST MATCH NAME OF IMAGE IN FOLDER images\weapons
+export const ARs = ['HAVOC_Rifle',
+                    'Nemesis_Burst_AR',
+                    'R-301_Carbine',
+                    'VK-47_Flatline']
+
+export const LMGS = ['Devotion_LMG',
+                     'L-STAR_EMG',
+                     'M600_Spitfire',
+                     'Rampage_LMG']
+
+export const Marksman = ['30-30_Repeater',
+                         'G7-Scout',
+                         'Triple_Take']
+
+export const Pistols = ['P2020',
+                        'Wingman']
+
+export const Shotguns = ['EVA-8_Auto',
+                         'Mastiff_Shotgun',
+                         'Mozambique_Shotgun',
+                         'Peacekeeper']
+
+export const SMGs = ['Alternator_SMG',
+                     'C.A.R._SMG',
+                     'Prowler_Burst_PDW',
+                     'R-99_SMG',
+                     'Volt_SMG']
+
+export const Snipers = ['Charge_Rifle',
+                        'Longbow_DMR',
+                        'Sentinel']
 
 import {UI} from './UI.js'
 import {Game} from './game.js'
@@ -77,6 +110,7 @@ function generate2() {
 
     try {
         let numeroLegends = game.generateRandomPlayer()
+        let weaponsLegends = game.generateTwoWeapon()
         UIgame.updateUI(mode,numeroLegends)
     } catch (error) {
         console.log(error)

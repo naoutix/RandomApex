@@ -1,5 +1,6 @@
 export {Game};
-import {generateFirstElement,generateSecondElement,generateThirdElement} from './random.js'
+import { ARs,LMGS,SMGs,Marksman,Pistols,Shotguns,Snipers } from './main.js';
+import {generateFirstElement,generateSecondElement,generateThirdElement,generateRedundancy} from './random.js'
 //Create a class called Game
 
 class Game {
@@ -10,6 +11,7 @@ class Game {
     choose2 = 0
     choose3 = 0
     mode = "Trio"
+    Weapons = {'ARs':ARs,'LMGS':LMGS,'SMGs':SMGs,'Marksman':Marksman,'Pistols':Pistols,'Shotguns':Shotguns,'Snipers' :Snipers}
 
     static playerState = new Set(['soloPick','NotSoloPick']);
 
@@ -98,7 +100,6 @@ class Game {
     }
 
     generateRandomPlayer() {
-        console.log(this.mode)
         if (this.mode == "Trio"){
             return this.#generate3RandomPlayer()
         }
@@ -108,7 +109,6 @@ class Game {
     }
     #generate3RandomPlayer(){
         let {indice , SortListElement : LegendsFreeSort} = this.#sort(this.legendsFree1,this.legendsFree2,this.legendsFree3)
-        console.log(LegendsFreeSort)
 
         // Cas limite 
         if (LegendsFreeSort[0].length <=3){
@@ -149,6 +149,12 @@ class Game {
         this.choose1 = generateFirstElement(LegendsFreeSort)
         this.choose2 = generateSecondElement(this.mode,LegendsFreeSort,this.choose1)
         return [this.choose1,this.choose2]
+    }
+
+    generateTwoWeapon() {
+        //let categorie1 = generateRedundancy(this.Weapons)
+        let ok = []
+        console.log(this.Weapons)
     }
 
     rebuild(){

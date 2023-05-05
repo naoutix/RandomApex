@@ -1,4 +1,4 @@
-export {generateFirstElement,generateSecondElement,generateThirdElement}
+export {generateFirstElement,generateSecondElement,generateThirdElement,generateRedundancy}
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
@@ -120,4 +120,9 @@ function generateThirdElement(MaxSort,choose1,choose2) {
     }
     max3.splice(max3.indexOf(choose3),1)
     return choose3  
+}
+
+function generateRedundancy(max) {
+    let choose1 = max[getRandomInt(max.length)]
+    return choose1
 }
