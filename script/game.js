@@ -1,5 +1,6 @@
 export {Game};
-import {generateFirstElement,generateSecondElement,generateThirdElement} from './random.js'
+import { ARs,LMGS,SMGs,Marksman,Pistols,Shotguns,Snipers } from './main.js';
+import {generateFirstElement,generateSecondElement,generateThirdElement,generateRedundancy} from './random.js'
 //Create a class called Game
 
 class Game {
@@ -10,10 +11,27 @@ class Game {
     choose2 = 0
     choose3 = 0
     mode = "Trio"
+    Weapons = []
+    WeaponsName = []
 
     static playerState = new Set(['soloPick','NotSoloPick']);
 
     constructor() {
+        this.Weapons = new Map([['ARs',ARs],
+        ['LMGS',LMGS],
+        ['SMGs',SMGs],
+        ['Marksman',Marksman],
+        ['Pistols',Pistols],
+        ['Shotguns',Shotguns],
+        ['Snipers',Snipers]])
+        this.WeaponsName = ['ARs',
+        'LMGS',
+        'SMGs',
+        'Marksman',
+        'Pistols',
+        'Shotguns',
+        'Snipers']
+
     }
 
     
@@ -98,7 +116,6 @@ class Game {
     }
 
     generateRandomPlayer() {
-        console.log(this.mode)
         if (this.mode == "Trio"){
             return this.#generate3RandomPlayer()
         }
@@ -108,15 +125,15 @@ class Game {
     }
     #generate3RandomPlayer(){
         let {indice , SortListElement : LegendsFreeSort} = this.#sort(this.legendsFree1,this.legendsFree2,this.legendsFree3)
-        console.log(LegendsFreeSort)
 
         // Cas limite 
+        console.log(LegendsFreeSort)
         if (LegendsFreeSort[0].length <=3){
             var indexprior = -1
             // Si une legends est free chez 3 player alors elle prioritaire a choisir
             for (let index = 0; index < LegendsFreeSort[0].length; index++) {
                 const element = LegendsFreeSort[0][index];
-                if (legendsFree1.indexOf(element) != -1 && legendsFree2.indexOf(element) != -1 && legendsFree3.indexOf(element) != -1 ){
+                if (this.legendsFree1.indexOf(element) != -1 && this.legendsFree2.indexOf(element) != -1 && this.legendsFree3.indexOf(element) != -1 ){
                     indexprior = index
                 }
             }
@@ -149,6 +166,20 @@ class Game {
         this.choose1 = generateFirstElement(LegendsFreeSort)
         this.choose2 = generateSecondElement(this.mode,LegendsFreeSort,this.choose1)
         return [this.choose1,this.choose2]
+    }
+
+    generateTwoWeapon() {
+        let random1 = generateRedundancy(this.WeaponsName)
+        let random2 = generateRedundancy(this.WeaponsName)
+        let NomCategorie1 = this.WeaponsName[random1]
+        let NomCategorie2 = this.WeaponsName[random2]
+        let categorie1 = this.Weapons.get(NomCategorie1)
+        let categorie2 = this.Weapons.get(NomCategorie2)
+        random1 = generateRedundancy(categorie1)
+        random2 = generateRedundancy(categorie2)
+        let weapon1 = categorie1[random1]
+        let weapon2 = categorie2[random2]
+        return [[weapon1,NomCategorie1],[weapon2,NomCategorie2]]
     }
 
     rebuild(){
