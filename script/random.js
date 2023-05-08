@@ -123,6 +123,6 @@ function generateThirdElement(MaxSort,choose1,choose2) {
 }
 
 function generateRedundancy(max) {
-    let choose1 = max[getRandomInt(max.length)]
+    let choose1 = getRandomInt(max.length)
     return choose1
 }

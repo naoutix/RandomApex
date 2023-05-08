@@ -35,7 +35,7 @@ export const LMGS = ['Devotion_LMG',
                      'Rampage_LMG']
 
 export const Marksman = ['30-30_Repeater',
-                         'G7-Scout',
+                         'G7_Scout',
                          'Triple_Take']
 
 export const Pistols = ['P2020',
@@ -111,7 +111,8 @@ function generate2() {
     try {
         let numeroLegends = game.generateRandomPlayer()
         let weaponsLegends = game.generateTwoWeapon()
-        UIgame.updateUI(mode,numeroLegends)
+        UIgame.updateUIlegends(mode,numeroLegends)
+        UIgame.updateUIweapons(weaponsLegends)
     } catch (error) {
         console.log(error)
         game.rebuild()
