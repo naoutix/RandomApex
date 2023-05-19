@@ -28,6 +28,8 @@ class UI {
         this.myTable1 = document.getElementById("LegendeSelector1");
         this.myTable2 = document.getElementById("LegendeSelector2");
         this.myTable3 = document.getElementById("LegendeSelector3");
+        this.parcoursRow = [1,2,3,4,5]
+        this.parcoursCol = [[1,2,3,4,5,6],[1,2,3,4,5],[1,2,3,4],[1,2,3,4,5],[1,2,3,4]]
         this.name1 = document.getElementById("OutP1")
         this.name2 = document.getElementById("OutP2")
         this.name3 = document.getElementById("OutP3")
@@ -35,6 +37,9 @@ class UI {
         this.weapon2 = document.getElementById("weapon2")
         this.weaponName1 = document.getElementById("weapon1Name")
         this.weaponName2 = document.getElementById("weapon2Name")
+        this.codeLegends1 = document.getElementById("CodeLegends1")
+        this.codeLegends2 = document.getElementById("CodeLegends2")
+        this.codeLegends3 = document.getElementById("CodeLegends3")
     }
 
     resetUI(){
@@ -74,12 +79,10 @@ class UI {
         // Mode Fill LegendsFree
         let listPlayer = []
         for (let i = 0; i < 5; i++) {
-            var max = 5
-            if (i == 4){
-                max = 3
-            }
-            for (let j = 0; j < max; j++) {
-                const myRow = legendselector.getElementsByTagName("tr")[i];
+            const colI = this.parcoursCol[i]
+            let j = 0;
+            for (j of colI) {
+                const myRow = legendselector.getElementsByTagName("tr")[this.parcoursRow[i]];
                 const myCell = myRow.getElementsByTagName("td")[j];
                 const checkbox = myCell.getElementsByTagName("input")
                 if (checkbox.checkbox.checked){
@@ -88,6 +91,57 @@ class UI {
             }
         }
         return listPlayer
+    }
+
+    updateFromCode(Code,legendselector){
+        let count = 0
+        for (let i = 0; i < 5; i++) {
+            const colI = this.parcoursCol[i]
+            let j = 0;
+            for (j of colI) {
+                const myRow = legendselector.getElementsByTagName("tr")[this.parcoursRow[i]];
+                const myCell = myRow.getElementsByTagName("td")[j];
+                const checkbox = myCell.getElementsByTagName("input")
+                console.log(count)
+                console.log(Code[count])
+                if (Code[count] == "1"){
+                    checkbox.checkbox.checked = true
+                }else{
+                    checkbox.checkbox.checked = false
+                }
+                count++
+            }
+        }
+    }
+    codeFromTable(){
+        let code1 = this.#codeFromTableSelect(this.myTable1)
+        let code2 = this.#codeFromTableSelect(this.myTable2)
+        let code3 = this.#codeFromTableSelect(this.myTable3)
+        this.codeLegends1.value = code1
+        this.codeLegends2.value = code2
+        this.codeLegends3.value = code3
+        return {code1,code2,code3}
+    }
+    #codeFromTableSelect(legendselector){
+        let code = ""
+        for (let i = 0; i < 5; i++) {
+            const colI = this.parcoursCol[i]
+            let j = 0;
+            for (j of colI) {
+                const myRow = legendselector.getElementsByTagName("tr")[this.parcoursRow[i]];
+                const myCell = myRow.getElementsByTagName("td")[j];
+                const checkbox = myCell.getElementsByTagName("input")
+                if (checkbox.checkbox.checked){
+                    code = code.concat("","1")
+                }
+                else {
+                    code = code.concat("","0")
+                }
+            }
+        }
+        code = parseInt(code, 2).toString(16).toUpperCase().padStart(6, '0')
+        code = "0x".concat(code)
+        return code       
     }
 
     updateUIlegends(mode,numeroLegends){

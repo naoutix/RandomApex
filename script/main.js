@@ -21,7 +21,8 @@ export const NameNumber = ['bloodhound',
                             'madmaggie',
                             'newcastle',
                             'vantage',
-                            'catalyst']
+                            'catalyst',
+                            'ballistic']
 
 // LIST WEAPONS -> MUST MATCH NAME OF IMAGE IN FOLDER images\weapons
 export const ARs = ['HAVOC_Rifle',
@@ -70,6 +71,9 @@ button.addEventListener('click',generate2)
 button2.addEventListener('click',changeMode)
 button3.addEventListener('click',changeModeWeapon)
 
+addEventListener("input",UpdateCode)
+
+
 let mode = "Trio"
 function changeMode() {
     let ThirdPlayerBox = document.getElementById('ThirdPlayerBox')
@@ -99,6 +103,21 @@ function changeModeWeapon() {
         weapon1.style.display = "none"
     }
 }
+
+
+function UpdateCode(event){
+    if (event.target.id.match("CodeLegends[0-3]")) {
+        let txt = document.getElementById(event.target.id).value
+        if (txt.match("0x[0-9a-fA-F]{6}([0-9a-fA-F]{6})?")){
+            let code = ((parseInt(txt, 16)).toString(2)).padStart(24, '0')
+            console.log("LegendeSelector".concat(event.target.id.slice(-1)))
+            UIgame.updateFromCode(code,document.getElementById("LegendeSelector".concat(event.target.id.slice(-1))))           
+        }
+    }
+    else {
+        let {code1,code2,code3} = UIgame.codeFromTable()
+    }
+}
 /**
  * Main function
  *
@@ -123,35 +142,3 @@ function generate2() {
 
 
 
-let buttonLegends1 = document.getElementById('Select1')
-let buttonLegends2 = document.getElementById('Select2')
-let buttonLegends3 = document.getElementById('Select3')
-buttonLegends1.addEventListener('click',dropdown.bind(null,"content1"))
-buttonLegends2.addEventListener('click',dropdown.bind(null,"content2"))
-buttonLegends3.addEventListener('click',dropdown.bind(null,"content3"))
-
-/* When the user clicks on the button,
-toggle between hiding and showing the dropdown content */
-function dropdown(content) {
-    closeDropdown()
-    document.getElementById(content).classList.toggle("show");
-}
-
-function closeDropdown(){
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-        var openDropdown = dropdowns[i];
-        if (openDropdown.classList.contains('show')) {
-            openDropdown.classList.remove('show');
-        }
-    }
-}
-function event(event) {
-    if (!event.target.matches('.dropbtn') &&!(event.target.name == "checkbox") && !(event.target.tagName == "TD") && !(event.target.tagName == "TR")&& !(event.target.tagName == "TABLE")) {
-        closeDropdown()
-    }
-}
-
-// Close the dropdown menu if the user clicks outside of it
-window.onclick = event
