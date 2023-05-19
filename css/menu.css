@@ -1,10 +1,4 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Lato', sans-serif;
-    font-family: 'Oswald', sans-serif;
-  }
+
   .wrapper{
     z-index: 1;
     position: fixed;
@@ -94,7 +88,7 @@
     text-align: center;
   }
   .wrapper ul li{
-    height: 7%;
+    height: auto;
     margin: 10px 0;
   }
   .wrapper ul li a{

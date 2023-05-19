@@ -96,10 +96,12 @@ body {
   padding: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
-img {
-    height: 100%;
-    width: 100%;
+
+.box.weapon img {
+  width: 100%;
+  height: 100%;
 }
+
 .cover {
     object-fit: cover;
 }
@@ -113,3 +115,13 @@ img {
   background-color: darkmagenta;
   opacity: 75%;
 }
+
+input:valid {
+  border: green solid 3px;
+  background-color: green;
+}
+
+input:invalid {
+  border: red solid 3px;
+}
+
