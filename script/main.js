@@ -72,14 +72,19 @@ button2.addEventListener('click',changeMode)
 button3.addEventListener('click',changeModeWeapon)
 
 addEventListener("input",UpdateCode)
-
-
+init()
+function init(){
+    checkCookie("LegendeSelector1")
+    checkCookie("LegendeSelector2")
+    checkCookie("LegendeSelector3")
+}
 let mode = "Trio"
 function changeMode() {
     let ThirdPlayerBox = document.getElementById('ThirdPlayerBox')
     let ThirdPlayerName = document.getElementById('ThirdPlayerName')
     let ThirdPlayerOutP3 = document.getElementById('OutP3')
-    let ThirdPlayerMenu = document.getElementById('ThirdPlayerMenu')
+    let ThirdPlayerMenu = document.getElementById('ThirdPlayerMenuToHide')
+
     if (ThirdPlayerBox.style.display === "none") {
         ThirdPlayerBox.style.display = "block"
         ThirdPlayerName.style.display = "block"
@@ -110,12 +115,16 @@ function UpdateCode(event){
         let txt = document.getElementById(event.target.id).value
         if (txt.match("0x[0-9a-fA-F]{6}([0-9a-fA-F]{6})?")){
             let code = ((parseInt(txt, 16)).toString(2)).padStart(24, '0')
-            console.log("LegendeSelector".concat(event.target.id.slice(-1)))
-            UIgame.updateFromCode(code,document.getElementById("LegendeSelector".concat(event.target.id.slice(-1))))           
+            //console.log("LegendeSelector".concat(event.target.id.slice(-1)))
+            UIgame.updateFromCode(code,document.getElementById("LegendeSelector".concat(event.target.id.slice(-1)))) 
+            document.cookie = "LegendeSelector".concat(event.target.id.slice(-1)) +"="+txt+";"+"expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/; secure; samesite=strict"        
         }
     }
     else {
         let {code1,code2,code3} = UIgame.codeFromTable()
+        document.cookie = "LegendeSelector1="+code1+";"+"expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/; secure; samesite=strict"
+        document.cookie = "LegendeSelector2="+code2+";"+"expires=Fri, 31 Dec 9999 23:59:59 GMT; paht=/; secure; samesite=strict"
+        document.cookie = "LegendeSelector3="+code3+";"+"expires=Fri, 31 Dec 9999 23:59:59 GMT; paht=/; secure; samesite=strict"
     }
 }
 /**
@@ -139,6 +148,34 @@ function generate2() {
     }   
 }
 
+/**  COOKIE
+ *
+ */
 
+function getCookie(cname) {
+    let name = cname + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for(let i = 0; i <ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
 
-
+function checkCookie(cname) {
+    let code = getCookie(cname);
+    if (code != "") {
+        code = ((parseInt(code, 16)).toString(2)).padStart(24, '0')
+        UIgame.updateFromCode(code,document.getElementById(cname)) 
+    } else {
+        document.cookie = "LegendeSelector1=0xFFFFFF;expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/; secure; samesite=strict"
+        document.cookie = "LegendeSelector2=0xFFFFFF;expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/; secure; samesite=strict"
+        document.cookie = "LegendeSelector3=0xFFFFFF;expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/; secure; samesite=strict"       
+    }
+}

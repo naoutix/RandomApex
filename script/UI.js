@@ -102,8 +102,6 @@ class UI {
                 const myRow = legendselector.getElementsByTagName("tr")[this.parcoursRow[i]];
                 const myCell = myRow.getElementsByTagName("td")[j];
                 const checkbox = myCell.getElementsByTagName("input")
-                console.log(count)
-                console.log(Code[count])
                 if (Code[count] == "1"){
                     checkbox.checkbox.checked = true
                 }else{
