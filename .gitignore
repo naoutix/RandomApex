@@ -1,6 +1,7 @@
 # Compiled class file
 *.class
-
+images/maps(Backup)
+images/weapons(Backup)
 # Log file
 *.log
 
