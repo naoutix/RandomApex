@@ -1,5 +1,5 @@
 export {Game};
-import { ARs,LMGS,SMGs,Marksman,Pistols,Shotguns,Snipers } from './main.js';
+import { ARs,LMGS,SMGs,Marksman,Pistols,Shotguns,Snipers,POI_Name_Kings_Canyon,POI_Name_Worlds_Edge,POI_Name_Olympus,POI_Name_Storm_Point,POI_Name_Broken_Moon } from './main.js';
 import {generateFirstElement,generateSecondElement,generateThirdElement,generateRedundancy} from './random.js'
 //Create a class called Game
 
@@ -127,7 +127,7 @@ class Game {
         let {indice , SortListElement : LegendsFreeSort} = this.#sort(this.legendsFree1,this.legendsFree2,this.legendsFree3)
 
         // Cas limite 
-        console.log(LegendsFreeSort)
+        //console.log(LegendsFreeSort)
         if (LegendsFreeSort[0].length <=3){
             var indexprior = -1
             // Si une legends est free chez 3 player alors elle prioritaire a choisir
@@ -180,6 +180,12 @@ class Game {
         let weapon1 = categorie1[random1]
         let weapon2 = categorie2[random2]
         return [[weapon1,NomCategorie1],[weapon2,NomCategorie2]]
+    }
+
+    generatePOI(map){
+        let map_POI = eval('POI_Name_'+map)
+        return map_POI[generateRedundancy(map_POI)]
+
     }
 
     rebuild(){

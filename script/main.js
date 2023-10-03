@@ -57,6 +57,94 @@ export const Snipers = ['Charge_Rifle',
                         'Longbow_DMR',
                         'Sentinel']
 
+export const POI_Name_Kings_Canyon = [
+                         'Breaker_Wharf',
+                         'Alpha_Base',
+                         'Backup_Atmo',
+                         'Perpetual_Core',
+                         'Dry_Gulch',
+                         'Stasis_Net_Array',
+                         'Eternal_Gardens',
+                         'Promenade',
+                         'The_Divide',
+                         'Production_Yard',
+                         'Terraformer',
+                         'Cultivation',
+                         'The_Foundry',
+                         'Bionomics',
+                         'Atmostation'
+                        ]
+
+export const POI_Name_Worlds_Edge = [
+                            'Breaker_Wharf',
+                            'Alpha_Base',
+                            'Backup_Atmo',
+                            'Perpetual_Core',
+                            'Dry_Gulch',
+                            'Stasis_Net_Array',
+                            'Eternal_Gardens',
+                            'Promenade',
+                            'The_Divide',
+                            'Production_Yard',
+                            'Terraformer',
+                            'Cultivation',
+                            'The_Foundry',
+                            'Bionomics',
+                            'Atmostation'
+                           ]
+export const POI_Name_Olympus = [
+                            'Breaker_Wharf',
+                            'Alpha_Base',
+                            'Backup_Atmo',
+                            'Perpetual_Core',
+                            'Dry_Gulch',
+                            'Stasis_Net_Array',
+                            'Eternal_Gardens',
+                            'Promenade',
+                            'The_Divide',
+                            'Production_Yard',
+                            'Terraformer',
+                            'Cultivation',
+                            'The_Foundry',
+                            'Bionomics',
+                            'Atmostation'
+                           ]
+
+export const POI_Name_Storm_Point = [
+                            'Breaker_Wharf',
+                            'Alpha_Base',
+                            'Backup_Atmo',
+                            'Perpetual_Core',
+                            'Dry_Gulch',
+                            'Stasis_Net_Array',
+                            'Eternal_Gardens',
+                            'Promenade',
+                            'The_Divide',
+                            'Production_Yard',
+                            'Terraformer',
+                            'Cultivation',
+                            'The_Foundry',
+                            'Bionomics',
+                            'Atmostation'
+                           ]
+
+export const POI_Name_Broken_Moon = [
+                            'Breaker_Wharf',
+                            'Alpha_Base',
+                            'Backup_Atmo',
+                            'Perpetual_Core',
+                            'Dry_Gulch',
+                            'Stasis_Net_Array',
+                            'Eternal_Gardens',
+                            'Promenade',
+                            'The_Divide',
+                            'Production_Yard',
+                            'Terraformer',
+                            'Cultivation',
+                            'The_Foundry',
+                            'Bionomics',
+                            'Atmostation'
+                           ]
 import {UI} from './UI.js'
 import {Game} from './game.js'
 
@@ -73,12 +161,17 @@ button3.addEventListener('click',changeModeWeapon)
 
 addEventListener("input",UpdateCode)
 init()
+
+let mode = "Trio"
+let map = getCookie("Map")
+
 function init(){
     checkCookie("LegendeSelector1")
     checkCookie("LegendeSelector2")
     checkCookie("LegendeSelector3")
+    checkCookie("Map")
 }
-let mode = "Trio"
+
 function changeMode() {
     let ThirdPlayerBox = document.getElementById('ThirdPlayerBox')
     let ThirdPlayerName = document.getElementById('ThirdPlayerName')
@@ -109,7 +202,6 @@ function changeModeWeapon() {
     }
 }
 
-
 function UpdateCode(event){
     if (event.target.id.match("CodeLegends[0-3]")) {
         let txt = document.getElementById(event.target.id).value
@@ -127,20 +219,24 @@ function UpdateCode(event){
         document.cookie = "LegendeSelector3="+code3+";"+"expires=Fri, 31 Dec 9999 23:59:59 GMT; paht=/; secure; samesite=strict"
     }
 }
+
 /**
  * Main function
  *
  */
 function generate2() {
     // reset
-    let {legendsSelected1,legendsSelected2,legendsSelected3} = UIgame.resetUI()
+    let {legendsSelected1,legendsSelected2,legendsSelected3,map} = UIgame.resetUI()
     game.updateFreeLegends(mode,legendsSelected1,legendsSelected2,legendsSelected3)
 
     try {
         let numeroLegends = game.generateRandomPlayer()
         let weaponsLegends = game.generateTwoWeapon()
+        let POI_map = game.generatePOI(map)
+        document.cookie = "Map="+map+";expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/; secure; samesite=strict"
         UIgame.updateUIlegends(mode,numeroLegends)
         UIgame.updateUIweapons(weaponsLegends)
+        UIgame.updateUImaps(POI_map)
     } catch (error) {
         console.log(error)
         game.rebuild()
@@ -169,13 +265,25 @@ function getCookie(cname) {
 }
 
 function checkCookie(cname) {
+    const regexSelector = new RegExp("LegendeSelector*")
+    const regexMap      = new RegExp('Map')
+
     let code = getCookie(cname);
     if (code != "") {
-        code = ((parseInt(code, 16)).toString(2)).padStart(24, '0')
-        UIgame.updateFromCode(code,document.getElementById(cname)) 
+        if (regexSelector.test(cname)) {
+            code = ((parseInt(code, 16)).toString(2)).padStart(24, '0')
+            UIgame.updateFromCode(code,document.getElementById(cname))
+        }
+
+        if (regexMap.test(cname)){
+            document.getElementById(code).selected=true
+        }
     } else {
-        document.cookie = "LegendeSelector1=0xFFFFFF;expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/; secure; samesite=strict"
-        document.cookie = "LegendeSelector2=0xFFFFFF;expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/; secure; samesite=strict"
-        document.cookie = "LegendeSelector3=0xFFFFFF;expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/; secure; samesite=strict"       
+        if (regexSelector.test(cname)){
+            document.cookie = cname+"=0xFFFFFF;expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/; secure; samesite=strict"
+        }
+        if (regexMap.test(cname)){
+            document.cookie = "Map=Kings_Canyon;expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/; secure; samesite=strict"
+        }              
     }
 }

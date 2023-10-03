@@ -79,6 +79,15 @@ body {
     width: 200px;
     height: 200px;
 }
+.box.POI {
+  width: 600px;
+  height: 600px;
+}
+.box.POI img {
+  width: 100%;
+  height: 100%;
+}
+
 .box.weapon {
   width: 1000px;
   height: 200px;

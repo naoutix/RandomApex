@@ -11,6 +11,12 @@ function changeimageWeapons(contexte,Class,Weapon,label) {
     label.innerHTML = Weapon
 }
 
+function changeimagePOI(sky,base,view,map,POI_map) {
+    sky.src = `images/maps/${map}_POI/Sky/${POI_map}_Sky.webp`
+    base.src = `images/maps/${map}_POI/base/${POI_map}.webp`
+    view.src = `images/maps/${map}_POI/View/${POI_map}_View.webp`
+}
+
 class UI {
     timeout1 = null
     timeout2 = null
@@ -18,6 +24,7 @@ class UI {
 
     timeoutWeapon1 = null
     timeoutWeapon2 = null
+    timeoutPOI_map = null
 
     constructor(document){
         // HTML Element
@@ -40,14 +47,22 @@ class UI {
         this.codeLegends1 = document.getElementById("CodeLegends1")
         this.codeLegends2 = document.getElementById("CodeLegends2")
         this.codeLegends3 = document.getElementById("CodeLegends3")
+
+        this.POI_sky = document.getElementById("POI_sky")
+        this.POI_view = document.getElementById("POI_view")
+        this.POI_base = document.getElementById("POI_base")
+        this.map = document.getElementById("Map Select")
     }
 
     resetUI(){
-        this.player1.src = `images/random1.gif`
-        this.player2.src = `images/random2.gif`
-        this.player3.src = `images/random3.gif`
-        this.weapon1.src = `images/weapons/randomWeapon1.gif`
-        this.weapon2.src = `images/weapons/randomWeapon2.gif`
+        this.player1.src = 'images/random1.gif'
+        this.player2.src = 'images/random2.gif'
+        this.player3.src = 'images/random3.gif'
+        this.weapon1.src = 'images/weapons/randomWeapon1.gif'
+        this.weapon2.src = 'images/weapons/randomWeapon2.gif'
+        this.POI_sky.src  = 'images/maps/'+this.map.value+'_POI/Random_sky.gif'
+        this.POI_base.src = 'images/maps/'+this.map.value+'_POI/Random_base.gif'
+        this.POI_view.src = 'images/maps/'+this.map.value+'_POI/Random_view.gif'
 
         this.name1.innerHTML = "???"
         this.name2.innerHTML = "???"
@@ -58,13 +73,15 @@ class UI {
         let legendsSelected1 = this.selectedLegend(this.myTable1)
         let legendsSelected2 = this.selectedLegend(this.myTable2)
         let legendsSelected3 = this.selectedLegend(this.myTable3)
+        let map = this.map.value
         clearTimeout(this.timeout1)
         clearTimeout(this.timeout2)
         clearTimeout(this.timeout3)
         clearTimeout(this.timeoutWeapon1)
         clearTimeout(this.timeoutWeapon2)
+        clearInterval(this.timeoutPOI_map)
 
-        return {legendsSelected1,legendsSelected2,legendsSelected3}
+        return {legendsSelected1,legendsSelected2,legendsSelected3,map}
     }
     /**
      * Check selected legends with UI
@@ -154,5 +171,9 @@ class UI {
         this.timeoutWeapon1 = setTimeout(changeimageWeapons.bind(null,this.weapon1,Weapons[0][1],Weapons[0][0],this.weaponName1),1000)
         this.timeoutWeapon2 = setTimeout(changeimageWeapons.bind(null,this.weapon2,Weapons[1][1],Weapons[1][0],this.weaponName2),3000)
 
+    }
+
+    updateUImaps(POI_map){
+        this.timeoutPOI_map = setTimeout(changeimagePOI.bind(null,this.POI_sky,this.POI_base,this.POI_view,this.map.value,POI_map),3000)
     }
 }
