@@ -45,7 +45,17 @@
                     <label> WEAPON MODE </label>
                 </div>
                 <label class="toggle">
-                    <input type="checkbox" id="modeWeapon" checked >
+                    <input type="checkbox" id="modeWeapon" unchecked >
+                    <span class="slider"></span>
+                    <span class="labels" data-on="ON" data-off="OFF"></span>
+                </label>
+            </li>
+            <li>
+                <div class="Name">
+                    <label> MAP MODE </label>
+                </div>
+                <label class="toggle">
+                    <input type="checkbox" id="modeMAP" unchecked >
                     <span class="slider"></span>
                     <span class="labels" data-on="ON" data-off="OFF"></span>
                 </label>
@@ -73,11 +83,6 @@
                                                 </td>
                                                 <td>
                                                     <div style="padding:0em 0.25em">
-                                                            <label class="labelS"><input type="checkbox" name="checkbox" value="revenant" checked>Revenant<img src="images/Menu/Portrait_Revenant_square.webp"/></label>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div style="padding:0em 0.25em">
                                                             <label class="labelS"><input type="checkbox" name="checkbox" value="fuse" checked>Fuse<img src="images/Menu/Portrait_Fuse_square.webp"/></label>
                                                     </div>
                                                 </td>
@@ -101,27 +106,32 @@
                                                 <td class="navbox-group">Skirmisher</td>
                                                 <td>
                                                     <div style="padding:0em 0.25em">
-                                                        <label class="labelS"><input type="checkbox" name="checkbox" value="pathfinder" checked>pathfinder<img src="images/Menu/Portrait_Pathfinder_square.webp"/></label>
+                                                        <label class="labelS"><input type="checkbox" name="checkbox" value="pathfinder" checked>Pathfinder<img src="images/Menu/Portrait_Pathfinder_square.webp"/></label>
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div style="padding:0em 0.25em">
-                                                        <label class="labelS"><input type="checkbox" name="checkbox" value="wraith" checked>wraith<img src="images/Menu/Portrait_Wraith_square.webp"/></label>
+                                                        <label class="labelS"><input type="checkbox" name="checkbox" value="wraith" checked>Wraith<img src="images/Menu/Portrait_Wraith_square.webp"/></label>
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div style="padding:0em 0.25em">
-                                                        <label class="labelS"><input type="checkbox" name="checkbox" value="octane" checked>octane<img src="images/Menu/Portrait_Octane_square.webp"/></label>
+                                                        <label class="labelS"><input type="checkbox" name="checkbox" value="octane" checked>Octane<img src="images/Menu/Portrait_Octane_square.webp"/></label>
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div style="padding:0em 0.25em">
-                                                        <label class="labelS"><input type="checkbox" name="checkbox" value="horizon" checked>horizon<img src="images/Menu/Portrait_Horizon_square.webp"/></label>
+                                                            <label class="labelS"><input type="checkbox" name="checkbox" value="revenant" checked>Revenant<img src="images/Menu/Portrait_Revenant_square.webp"/></label>
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div style="padding:0em 0.25em">
-                                                        <label class="labelS"><input type="checkbox" name="checkbox" value="valkyrie" checked>valkyrie<img src="images/Menu/Portrait_Valkyrie_square.webp"/></label>
+                                                        <label class="labelS"><input type="checkbox" name="checkbox" value="horizon" checked>Horizon<img src="images/Menu/Portrait_Horizon_square.webp"/></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div style="padding:0em 0.25em">
+                                                        <label class="labelS"><input type="checkbox" name="checkbox" value="valkyrie" checked>Valkyrie<img src="images/Menu/Portrait_Valkyrie_square.webp"/></label>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -129,22 +139,22 @@
                                                 <td class="navbox-group">Recon</td>
                                                 <td>
                                                     <div style="padding:0em 0.25em">
-                                                        <label class="labelS"><input type="checkbox" name="checkbox" value="bloodhound" checked>bloodhound<img src="images/Menu/Portrait_Bloodhound_square.webp"/></label>
+                                                        <label class="labelS"><input type="checkbox" name="checkbox" value="bloodhound" checked>Bloodhound<img src="images/Menu/Portrait_Bloodhound_square.webp"/></label>
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div style="padding:0em 0.25em">
-                                                        <label class="labelS"><input type="checkbox" name="checkbox" value="crypto" checked>crypto<img src="images/Menu/Portrait_Crypto_square.webp"/></label>
+                                                        <label class="labelS"><input type="checkbox" name="checkbox" value="crypto" checked>Crypto<img src="images/Menu/Portrait_Crypto_square.webp"/></label>
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div style="padding:0em 0.25em">
-                                                        <label class="labelS"><input type="checkbox" name="checkbox" value="seer" checked>seer<img src="images/Menu/Portrait_Seer_square.webp"/></label>
+                                                        <label class="labelS"><input type="checkbox" name="checkbox" value="seer" checked>Seer<img src="images/Menu/Portrait_Seer_square.webp"/></label>
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div style="padding:0em 0.25em">
-                                                        <label class="labelS"><input type="checkbox" name="checkbox" value="vantage" checked>vantage<img src="images/Menu/Portrait_Vantage_square.webp"/></label>
+                                                        <label class="labelS"><input type="checkbox" name="checkbox" value="vantage" checked>Vantage<img src="images/Menu/Portrait_Vantage_square.webp"/></label>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -152,27 +162,32 @@
                                                 <td class="navbox-group">Support</td>
                                                 <td>
                                                     <div style="padding:0em 0.25em">
-                                                        <label class="labelS"><input type="checkbox" name="checkbox" value="gibraltar" checked>gibraltar<img src="images/Menu/Portrait_Gibraltar_square.webp"/></label>
+                                                        <label class="labelS"><input type="checkbox" name="checkbox" value="gibraltar" checked>Gibraltar<img src="images/Menu/Portrait_Gibraltar_square.webp"/></label>
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div style="padding:0em 0.25em">
-                                                        <label class="labelS"><input type="checkbox" name="checkbox" value="lifeline" checked>lifeline<img src="images/Menu/Portrait_Lifeline_square.webp"/></label>
+                                                        <label class="labelS"><input type="checkbox" name="checkbox" value="lifeline" checked>Lifeline<img src="images/Menu/Portrait_Lifeline_square.webp"/></label>
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div style="padding:0em 0.25em">
-                                                        <label class="labelS"><input type="checkbox" name="checkbox" value="mirage" checked>mirage<img src="images/Menu/Portrait_Mirage_square.webp"/></label>
+                                                        <label class="labelS"><input type="checkbox" name="checkbox" value="mirage" checked>Mirage<img src="images/Menu/Portrait_Mirage_square.webp"/></label>
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div style="padding:0em 0.25em">
-                                                        <label class="labelS"><input type="checkbox" name="checkbox" value="loba" checked>loba<img src="images/Menu/Portrait_Loba_square.webp"/></label>
+                                                        <label class="labelS"><input type="checkbox" name="checkbox" value="loba" checked>Loba<img src="images/Menu/Portrait_Loba_square.webp"/></label>
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div style="padding:0em 0.25em">
-                                                        <label class="labelS"><input type="checkbox" name="checkbox" value="newcastle" checked>newcastle<img src="images/Menu/Portrait_Newcastle_square.webp"/></label>
+                                                        <label class="labelS"><input type="checkbox" name="checkbox" value="newcastle" checked>Newcastle<img src="images/Menu/Portrait_Newcastle_square.webp"/></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div style="padding:0em 0.25em">
+                                                        <label class="labelS"><input type="checkbox" name="checkbox" value="conduit" checked>Conduit<img src="images/Menu/Portrait_Conduit_square.webp"/></label>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -180,22 +195,22 @@
                                                 <td class="navbox-group">Controller</td>
                                                 <td>
                                                     <div style="padding:0em 0.25em">
-                                                        <label class="labelS"><input type="checkbox" name="checkbox" value="caustic" checked>caustic<img src="images/Menu/Portrait_Caustic_square.webp"/></label>
+                                                        <label class="labelS"><input type="checkbox" name="checkbox" value="caustic" checked>Caustic<img src="images/Menu/Portrait_Caustic_square.webp"/></label>
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div style="padding:0em 0.25em">
-                                                        <label class="labelS"><input type="checkbox" name="checkbox" value="wattson" checked>wattson<img src="images/Menu/Portrait_Wattson_square.webp"/></label>
+                                                        <label class="labelS"><input type="checkbox" name="checkbox" value="wattson" checked>Wattson<img src="images/Menu/Portrait_Wattson_square.webp"/></label>
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div style="padding:0em 0.25em">
-                                                        <label class="labelS"><input type="checkbox" name="checkbox" value="rampart" checked>rampart<img src="images/Menu/Portrait_Rampart_square.webp"/></label>
+                                                        <label class="labelS"><input type="checkbox" name="checkbox" value="rampart" checked>Rampart<img src="images/Menu/Portrait_Rampart_square.webp"/></label>
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div style="padding:0em 0.25em">
-                                                        <label class="labelS"><input type="checkbox" name="checkbox" value="catalyst" checked>catalyst<img src="images/Menu/Portrait_Catalyst_square.webp"/></label>
+                                                        <label class="labelS"><input type="checkbox" name="checkbox" value="catalyst" checked>Catalyst<img src="images/Menu/Portrait_Catalyst_square.webp"/></label>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -206,7 +221,7 @@
                         </table>   
                     </div>
                 </div>
-                <input type="text" id="CodeLegends1" pattern="0x[0-9a-fA-F]{6}([0-9a-fA-F]{6})?">       
+                <input type="text" id="CodeLegends1" pattern="0x[0-9a-fA-F]{7}([0-9a-fA-F]{7})?">       
             </li>
             <li>
                 <div class="dropdown">
@@ -227,11 +242,6 @@
                                             <td>
                                                 <div style="padding:0em 0.25em">
                                                         <label class="labelS"><input type="checkbox" name="checkbox" value="bangalore" checked>Bangalore<img src="images/Menu/Portrait_Bangalore_square.webp"/></label>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div style="padding:0em 0.25em">
-                                                        <label class="labelS"><input type="checkbox" name="checkbox" value="revenant" checked>Revenant<img src="images/Menu/Portrait_Revenant_square.webp"/></label>
                                                 </div>
                                             </td>
                                             <td>
@@ -259,27 +269,32 @@
                                             <td class="navbox-group">Skirmisher</td>
                                             <td>
                                                 <div style="padding:0em 0.25em">
-                                                    <label class="labelS"><input type="checkbox" name="checkbox" value="pathfinder" checked>pathfinder<img src="images/Menu/Portrait_Pathfinder_square.webp"/></label>
+                                                    <label class="labelS"><input type="checkbox" name="checkbox" value="pathfinder" checked>Pathfinder<img src="images/Menu/Portrait_Pathfinder_square.webp"/></label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div style="padding:0em 0.25em">
-                                                    <label class="labelS"><input type="checkbox" name="checkbox" value="wraith" checked>wraith<img src="images/Menu/Portrait_Wraith_square.webp"/></label>
+                                                    <label class="labelS"><input type="checkbox" name="checkbox" value="wraith" checked>Wraith<img src="images/Menu/Portrait_Wraith_square.webp"/></label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div style="padding:0em 0.25em">
-                                                    <label class="labelS"><input type="checkbox" name="checkbox" value="octane" checked>octane<img src="images/Menu/Portrait_Octane_square.webp"/></label>
+                                                    <label class="labelS"><input type="checkbox" name="checkbox" value="octane" checked>Octane<img src="images/Menu/Portrait_Octane_square.webp"/></label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div style="padding:0em 0.25em">
-                                                    <label class="labelS"><input type="checkbox" name="checkbox" value="horizon" checked>horizon<img src="images/Menu/Portrait_Horizon_square.webp"/></label>
+                                                        <label class="labelS"><input type="checkbox" name="checkbox" value="revenant" checked>Revenant<img src="images/Menu/Portrait_Revenant_square.webp"/></label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div style="padding:0em 0.25em">
-                                                    <label class="labelS"><input type="checkbox" name="checkbox" value="valkyrie" checked>valkyrie<img src="images/Menu/Portrait_Valkyrie_square.webp"/></label>
+                                                    <label class="labelS"><input type="checkbox" name="checkbox" value="horizon" checked>Horizon<img src="images/Menu/Portrait_Horizon_square.webp"/></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div style="padding:0em 0.25em">
+                                                    <label class="labelS"><input type="checkbox" name="checkbox" value="valkyrie" checked>Valkyrie<img src="images/Menu/Portrait_Valkyrie_square.webp"/></label>
                                                 </div>
                                             </td>
                                         </tr>
@@ -287,22 +302,22 @@
                                             <td class="navbox-group">Recon</td>
                                             <td>
                                                 <div style="padding:0em 0.25em">
-                                                    <label class="labelS"><input type="checkbox" name="checkbox" value="bloodhound" checked>bloodhound<img src="images/Menu/Portrait_Bloodhound_square.webp"/></label>
+                                                    <label class="labelS"><input type="checkbox" name="checkbox" value="bloodhound" checked>Bloodhound<img src="images/Menu/Portrait_Bloodhound_square.webp"/></label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div style="padding:0em 0.25em">
-                                                    <label class="labelS"><input type="checkbox" name="checkbox" value="crypto" checked>crypto<img src="images/Menu/Portrait_Crypto_square.webp"/></label>
+                                                    <label class="labelS"><input type="checkbox" name="checkbox" value="crypto" checked>Crypto<img src="images/Menu/Portrait_Crypto_square.webp"/></label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div style="padding:0em 0.25em">
-                                                    <label class="labelS"><input type="checkbox" name="checkbox" value="seer" checked>seer<img src="images/Menu/Portrait_Seer_square.webp"/></label>
+                                                    <label class="labelS"><input type="checkbox" name="checkbox" value="seer" checked>Seer<img src="images/Menu/Portrait_Seer_square.webp"/></label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div style="padding:0em 0.25em">
-                                                    <label class="labelS"><input type="checkbox" name="checkbox" value="vantage" checked>vantage<img src="images/Menu/Portrait_Vantage_square.webp"/></label>
+                                                    <label class="labelS"><input type="checkbox" name="checkbox" value="vantage" checked>Vantage<img src="images/Menu/Portrait_Vantage_square.webp"/></label>
                                                 </div>
                                             </td>
                                         </tr>
@@ -310,27 +325,32 @@
                                             <td class="navbox-group">Support</td>
                                             <td>
                                                 <div style="padding:0em 0.25em">
-                                                    <label class="labelS"><input type="checkbox" name="checkbox" value="gibraltar" checked>gibraltar<img src="images/Menu/Portrait_Gibraltar_square.webp"/></label>
+                                                    <label class="labelS"><input type="checkbox" name="checkbox" value="gibraltar" checked>Gibraltar<img src="images/Menu/Portrait_Gibraltar_square.webp"/></label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div style="padding:0em 0.25em">
-                                                    <label class="labelS"><input type="checkbox" name="checkbox" value="lifeline" checked>lifeline<img src="images/Menu/Portrait_Lifeline_square.webp"/></label>
+                                                    <label class="labelS"><input type="checkbox" name="checkbox" value="lifeline" checked>Lifeline<img src="images/Menu/Portrait_Lifeline_square.webp"/></label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div style="padding:0em 0.25em">
-                                                    <label class="labelS"><input type="checkbox" name="checkbox" value="mirage" checked>mirage<img src="images/Menu/Portrait_Mirage_square.webp"/></label>
+                                                    <label class="labelS"><input type="checkbox" name="checkbox" value="mirage" checked>Mirage<img src="images/Menu/Portrait_Mirage_square.webp"/></label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div style="padding:0em 0.25em">
-                                                    <label class="labelS"><input type="checkbox" name="checkbox" value="loba" checked>loba<img src="images/Menu/Portrait_Loba_square.webp"/></label>
+                                                    <label class="labelS"><input type="checkbox" name="checkbox" value="loba" checked>Loba<img src="images/Menu/Portrait_Loba_square.webp"/></label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div style="padding:0em 0.25em">
-                                                    <label class="labelS"><input type="checkbox" name="checkbox" value="newcastle" checked>newcastle<img src="images/Menu/Portrait_Newcastle_square.webp"/></label>
+                                                    <label class="labelS"><input type="checkbox" name="checkbox" value="newcastle" checked>Newcastle<img src="images/Menu/Portrait_Newcastle_square.webp"/></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div style="padding:0em 0.25em">
+                                                    <label class="labelS"><input type="checkbox" name="checkbox" value="conduit" checked>Conduit<img src="images/Menu/Portrait_Conduit_square.webp"/></label>
                                                 </div>
                                             </td>
                                         </tr>
@@ -338,22 +358,22 @@
                                             <td class="navbox-group">Controller</td>
                                             <td>
                                                 <div style="padding:0em 0.25em">
-                                                    <label class="labelS"><input type="checkbox" name="checkbox" value="caustic" checked>caustic<img src="images/Menu/Portrait_Caustic_square.webp"/></label>
+                                                    <label class="labelS"><input type="checkbox" name="checkbox" value="caustic" checked>Caustic<img src="images/Menu/Portrait_Caustic_square.webp"/></label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div style="padding:0em 0.25em">
-                                                    <label class="labelS"><input type="checkbox" name="checkbox" value="wattson" checked>wattson<img src="images/Menu/Portrait_Wattson_square.webp"/></label>
+                                                    <label class="labelS"><input type="checkbox" name="checkbox" value="wattson" checked>Wattson<img src="images/Menu/Portrait_Wattson_square.webp"/></label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div style="padding:0em 0.25em">
-                                                    <label class="labelS"><input type="checkbox" name="checkbox" value="rampart" checked>rampart<img src="images/Menu/Portrait_Rampart_square.webp"/></label>
+                                                    <label class="labelS"><input type="checkbox" name="checkbox" value="rampart" checked>Rampart<img src="images/Menu/Portrait_Rampart_square.webp"/></label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div style="padding:0em 0.25em">
-                                                    <label class="labelS"><input type="checkbox" name="checkbox" value="catalyst" checked>catalyst<img src="images/Menu/Portrait_Catalyst_square.webp"/></label>
+                                                    <label class="labelS"><input type="checkbox" name="checkbox" value="catalyst" checked>Catalyst<img src="images/Menu/Portrait_Catalyst_square.webp"/></label>
                                                 </div>
                                             </td>
                                         </tr>
@@ -364,7 +384,7 @@
                     </table>                   
                 </div>
                 </div>
-                <input type="text" id="CodeLegends2" pattern="0x[0-9a-fA-F]{6}([0-9a-fA-F]{6})?">
+                <input type="text" id="CodeLegends2" pattern="0x[0-9a-fA-F]{7}([0-9a-fA-F]{7})?">
 
             </li>
             <li id="ThirdPlayerMenuToHide">
@@ -390,11 +410,6 @@
                                             </td>
                                             <td>
                                                 <div style="padding:0em 0.25em">
-                                                        <label class="labelS"><input type="checkbox" name="checkbox" value="revenant" checked>Revenant<img src="images/Menu/Portrait_Revenant_square.webp"/></label>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div style="padding:0em 0.25em">
                                                         <label class="labelS"><input type="checkbox" name="checkbox" value="fuse" checked>Fuse<img src="images/Menu/Portrait_Fuse_square.webp"/></label>
                                                 </div>
                                             </td>
@@ -418,27 +433,32 @@
                                             <td class="navbox-group">Skirmisher</td>
                                             <td>
                                                 <div style="padding:0em 0.25em">
-                                                    <label class="labelS"><input type="checkbox" name="checkbox" value="pathfinder" checked>pathfinder<img src="images/Menu/Portrait_Pathfinder_square.webp"/></label>
+                                                    <label class="labelS"><input type="checkbox" name="checkbox" value="pathfinder" checked>Pathfinder<img src="images/Menu/Portrait_Pathfinder_square.webp"/></label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div style="padding:0em 0.25em">
-                                                    <label class="labelS"><input type="checkbox" name="checkbox" value="wraith" checked>wraith<img src="images/Menu/Portrait_Wraith_square.webp"/></label>
+                                                    <label class="labelS"><input type="checkbox" name="checkbox" value="wraith" checked>Wraith<img src="images/Menu/Portrait_Wraith_square.webp"/></label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div style="padding:0em 0.25em">
-                                                    <label class="labelS"><input type="checkbox" name="checkbox" value="octane" checked>octane<img src="images/Menu/Portrait_Octane_square.webp"/></label>
+                                                    <label class="labelS"><input type="checkbox" name="checkbox" value="octane" checked>Octane<img src="images/Menu/Portrait_Octane_square.webp"/></label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div style="padding:0em 0.25em">
-                                                    <label class="labelS"><input type="checkbox" name="checkbox" value="horizon" checked>horizon<img src="images/Menu/Portrait_Horizon_square.webp"/></label>
+                                                        <label class="labelS"><input type="checkbox" name="checkbox" value="revenant" checked>Revenant<img src="images/Menu/Portrait_Revenant_square.webp"/></label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div style="padding:0em 0.25em">
-                                                    <label class="labelS"><input type="checkbox" name="checkbox" value="valkyrie" checked>valkyrie<img src="images/Menu/Portrait_Valkyrie_square.webp"/></label>
+                                                    <label class="labelS"><input type="checkbox" name="checkbox" value="horizon" checked>Horizon<img src="images/Menu/Portrait_Horizon_square.webp"/></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div style="padding:0em 0.25em">
+                                                    <label class="labelS"><input type="checkbox" name="checkbox" value="valkyrie" checked>Valkyrie<img src="images/Menu/Portrait_Valkyrie_square.webp"/></label>
                                                 </div>
                                             </td>
                                         </tr>
@@ -446,22 +466,22 @@
                                             <td class="navbox-group">Recon</td>
                                             <td>
                                                 <div style="padding:0em 0.25em">
-                                                    <label class="labelS"><input type="checkbox" name="checkbox" value="bloodhound" checked>bloodhound<img src="images/Menu/Portrait_Bloodhound_square.webp"/></label>
+                                                    <label class="labelS"><input type="checkbox" name="checkbox" value="bloodhound" checked>Bloodhound<img src="images/Menu/Portrait_Bloodhound_square.webp"/></label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div style="padding:0em 0.25em">
-                                                    <label class="labelS"><input type="checkbox" name="checkbox" value="crypto" checked>crypto<img src="images/Menu/Portrait_Crypto_square.webp"/></label>
+                                                    <label class="labelS"><input type="checkbox" name="checkbox" value="crypto" checked>Crypto<img src="images/Menu/Portrait_Crypto_square.webp"/></label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div style="padding:0em 0.25em">
-                                                    <label class="labelS"><input type="checkbox" name="checkbox" value="seer" checked>seer<img src="images/Menu/Portrait_Seer_square.webp"/></label>
+                                                    <label class="labelS"><input type="checkbox" name="checkbox" value="seer" checked>Seer<img src="images/Menu/Portrait_Seer_square.webp"/></label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div style="padding:0em 0.25em">
-                                                    <label class="labelS"><input type="checkbox" name="checkbox" value="vantage" checked>vantage<img src="images/Menu/Portrait_Vantage_square.webp"/></label>
+                                                    <label class="labelS"><input type="checkbox" name="checkbox" value="vantage" checked>Vantage<img src="images/Menu/Portrait_Vantage_square.webp"/></label>
                                                 </div>
                                             </td>
                                         </tr>
@@ -469,27 +489,32 @@
                                             <td class="navbox-group">Support</td>
                                             <td>
                                                 <div style="padding:0em 0.25em">
-                                                    <label class="labelS"><input type="checkbox" name="checkbox" value="gibraltar" checked>gibraltar<img src="images/Menu/Portrait_Gibraltar_square.webp"/></label>
+                                                    <label class="labelS"><input type="checkbox" name="checkbox" value="gibraltar" checked>Gibraltar<img src="images/Menu/Portrait_Gibraltar_square.webp"/></label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div style="padding:0em 0.25em">
-                                                    <label class="labelS"><input type="checkbox" name="checkbox" value="lifeline" checked>lifeline<img src="images/Menu/Portrait_Lifeline_square.webp"/></label>
+                                                    <label class="labelS"><input type="checkbox" name="checkbox" value="lifeline" checked>Lifeline<img src="images/Menu/Portrait_Lifeline_square.webp"/></label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div style="padding:0em 0.25em">
-                                                    <label class="labelS"><input type="checkbox" name="checkbox" value="mirage" checked>mirage<img src="images/Menu/Portrait_Mirage_square.webp"/></label>
+                                                    <label class="labelS"><input type="checkbox" name="checkbox" value="mirage" checked>Mirage<img src="images/Menu/Portrait_Mirage_square.webp"/></label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div style="padding:0em 0.25em">
-                                                    <label class="labelS"><input type="checkbox" name="checkbox" value="loba" checked>loba<img src="images/Menu/Portrait_Loba_square.webp"/></label>
+                                                    <label class="labelS"><input type="checkbox" name="checkbox" value="loba" checked>Loba<img src="images/Menu/Portrait_Loba_square.webp"/></label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div style="padding:0em 0.25em">
-                                                    <label class="labelS"><input type="checkbox" name="checkbox" value="newcastle" checked>newcastle<img src="images/Menu/Portrait_Newcastle_square.webp"/></label>
+                                                    <label class="labelS"><input type="checkbox" name="checkbox" value="newcastle" checked>Newcastle<img src="images/Menu/Portrait_Newcastle_square.webp"/></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div style="padding:0em 0.25em">
+                                                    <label class="labelS"><input type="checkbox" name="checkbox" value="conduit" checked>Conduit<img src="images/Menu/Portrait_Conduit_square.webp"/></label>
                                                 </div>
                                             </td>
                                         </tr>
@@ -497,22 +522,22 @@
                                             <td class="navbox-group">Controller</td>
                                             <td>
                                                 <div style="padding:0em 0.25em">
-                                                    <label class="labelS"><input type="checkbox" name="checkbox" value="caustic" checked>caustic<img src="images/Menu/Portrait_Caustic_square.webp"/></label>
+                                                    <label class="labelS"><input type="checkbox" name="checkbox" value="caustic" checked>Caustic<img src="images/Menu/Portrait_Caustic_square.webp"/></label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div style="padding:0em 0.25em">
-                                                    <label class="labelS"><input type="checkbox" name="checkbox" value="wattson" checked>wattson<img src="images/Menu/Portrait_Wattson_square.webp"/></label>
+                                                    <label class="labelS"><input type="checkbox" name="checkbox" value="wattson" checked>Wattson<img src="images/Menu/Portrait_Wattson_square.webp"/></label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div style="padding:0em 0.25em">
-                                                    <label class="labelS"><input type="checkbox" name="checkbox" value="rampart" checked>rampart<img src="images/Menu/Portrait_Rampart_square.webp"/></label>
+                                                    <label class="labelS"><input type="checkbox" name="checkbox" value="rampart" checked>Rampart<img src="images/Menu/Portrait_Rampart_square.webp"/></label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div style="padding:0em 0.25em">
-                                                    <label class="labelS"><input type="checkbox" name="checkbox" value="catalyst" checked>catalyst<img src="images/Menu/Portrait_Catalyst_square.webp"/></label>
+                                                    <label class="labelS"><input type="checkbox" name="checkbox" value="catalyst" checked>Catalyst<img src="images/Menu/Portrait_Catalyst_square.webp"/></label>
                                                 </div>
                                             </td>
                                         </tr>
@@ -523,12 +548,12 @@
                     </table>   
                 </div>
             </div>
-            <input type="text" id="CodeLegends3" pattern="0x[0-9a-fA-F]{6}([0-9a-fA-F]{6})?">
+            <input type="text" id="CodeLegends3" pattern="0x[0-9a-fA-F]{7}([0-9a-fA-F]{7})?">
             </li>
             <li>
                 <div class="Name">
                 <label>
-                Code: All Legends 0xFFFFFF, johan 0xCB99C0,smurf 0x839180
+                Code: All Legends 0x1FFFFFF,smurf 0x10C2380
                 </label>
             </div>
             </li>
@@ -569,32 +594,34 @@
         </div>
         <!-- Roulette WEAPON display-->
         <div id="WEAPON ROULETTE">
-        <div class="wrapper2">
-            <div class="box weapon" id="weapon1Box"><img src="images/weapons/randomWeapon1.gif" alt="Weapon set" id="weapon1"></div>
-            <div class="box weapon" id="weapon2Box"><img src="images/weapons/randomWeapon2.gif" alt="Weapon set" id="weapon2"></div>
+            <div class="wrapper2">
+                <div class="box weapon" id="weapon1Box"><img src="images/weapons/randomWeapon1.gif" alt="Weapon set" id="weapon1"></div>
+                <div class="box weapon" id="weapon2Box"><img src="images/weapons/randomWeapon2.gif" alt="Weapon set" id="weapon2"></div>
+            </div>
+            <!-- Name Roulette WEAPON display-->
+            <div class="wrapper2" id="weaponDisplay">
+                <label class="weaponName P1" id="weapon1Name"> ??? </label>
+                <label class="weaponName P2" id="weapon2Name"> ??? </label>
+            </div>
         </div>
-        <!-- Name Roulette WEAPON display-->
-        <div class="wrapper2" id="weaponDisplay">
-            <label class="weaponName P1" id="weapon1Name"> ??? </label>
-            <label class="weaponName P2" id="weapon2Name"> ??? </label>
+        <div id="Map Roulette">
+            <div class="wrapper2" id="mapChoose">
+                <select id="Map Select">
+                    <option value="">--Choose Map--</option>
+                    <option value="Kings_Canyon" id="Kings_Canyon" selected>Kings Canyon</option>
+                    <option value="Worlds_Edge" id="Worlds_Edge">Worlds Edge</option>
+                    <option value="Olympus" id="Olympus">Olympus</option>
+                    <option value="Storm_Point" id="Storm_Point">Storm Point</option>
+                    <option value="Broken_Moon" id="Broken_Moon">Broken Moon</option>
+                </select>
+            </div>
+            <!-- Roulette POI-->
+            <div class="wrapper2" id="POIDisplay">
+                <div class="box POI"><img src="images/maps/Broken_Moon_POI/Random_sky.gif" alt="POI set" id="POI_sky"></div>
+                <div class="box POI"><img src="images/maps/Broken_Moon_POI/Random_base.gif"alt="POI set" id="POI_base"></div>
+                <div class="box POI"><img src="images/maps/Broken_Moon_POI/Random_view.gif"alt="POI set" id="POI_view"></div>
+            </div>
         </div>
-        <div class="wrapper2">
-            <select id="Map Select">
-                <option value="">--Choose Map--</option>
-                <option value="Kings_Canyon" id="Kings_Canyon" selected>Kings Canyon</option>
-                <option value="Worlds_Edge" id="Worlds_Edge">Worlds Edge</option>
-                <option value="Olympus" id="Olympus">Olympus</option>
-                <option value="Storm_Point" id="Storm_Point">Storm Point</option>
-                <option value="Broken_Moon" id="Broken_Moon">Broken Moon</option>
-            </select>
-        </div>
-        <!-- Roulette POI-->
-        <div class="wrapper2" id="POIDisplay">
-            <div class="box POI"><img src="images/maps/Broken_Moon_POI/Random_sky.gif" alt="POI set" id="POI_sky"></div>
-            <div class="box POI"><img src="images/maps/Broken_Moon_POI/Random_base.gif"alt="POI set" id="POI_base"></div>
-            <div class="box POI"><img src="images/maps/Broken_Moon_POI/Random_view.gif"alt="POI set" id="POI_view"></div>
-        </div>
-        
       <!-- Script-->
         <script src="script/main.js" type="module"></script>
         <script src="script/button.js"></script>

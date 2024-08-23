@@ -36,7 +36,7 @@ class UI {
         this.myTable2 = document.getElementById("LegendeSelector2");
         this.myTable3 = document.getElementById("LegendeSelector3");
         this.parcoursRow = [1,2,3,4,5]
-        this.parcoursCol = [[1,2,3,4,5,6],[1,2,3,4,5],[1,2,3,4],[1,2,3,4,5],[1,2,3,4]]
+        this.parcoursCol = [[1,2,3,4,5],[1,2,3,4,5,6],[1,2,3,4],[1,2,3,4,5,6],[1,2,3,4]]
         this.name1 = document.getElementById("OutP1")
         this.name2 = document.getElementById("OutP2")
         this.name3 = document.getElementById("OutP3")
@@ -52,6 +52,8 @@ class UI {
         this.POI_view = document.getElementById("POI_view")
         this.POI_base = document.getElementById("POI_base")
         this.map = document.getElementById("Map Select")
+        this.WeaponMod = document.getElementById("modeWeapon")
+        this.mapMod = document.getElementById("modeMAP")
     }
 
     resetUI(){
@@ -145,6 +147,7 @@ class UI {
             for (j of colI) {
                 const myRow = legendselector.getElementsByTagName("tr")[this.parcoursRow[i]];
                 const myCell = myRow.getElementsByTagName("td")[j];
+                //console.log("i:"+i+" j:"+j)
                 const checkbox = myCell.getElementsByTagName("input")
                 if (checkbox.checkbox.checked){
                     code = code.concat("","1")
@@ -154,7 +157,7 @@ class UI {
                 }
             }
         }
-        code = parseInt(code, 2).toString(16).toUpperCase().padStart(6, '0')
+        code = parseInt(code, 2).toString(16).toUpperCase().padStart(7, '0')
         code = "0x".concat(code)
         return code       
     }
@@ -175,5 +178,23 @@ class UI {
 
     updateUImaps(POI_map){
         this.timeoutPOI_map = setTimeout(changeimagePOI.bind(null,this.POI_sky,this.POI_base,this.POI_view,this.map.value,POI_map),3000)
+    }
+
+    updateUIWeaponMod(state){
+        if (state=="On"){
+            this.WeaponMod.checked = true
+        }
+        else {
+            this.WeaponMod.checked = false
+        }
+    }
+
+    updateUIMapMod(state){
+        if (state=="On"){
+            this.mapMod.checked = true
+        }
+        else {
+            this.mapMod.checked = false
+        }        
     }
 }
