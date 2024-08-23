@@ -248,6 +248,8 @@ function UpdateCode(event){
         let txt = document.getElementById(event.target.id).value
         if (txt.match("0x[0-9a-fA-F]{7}([0-9a-fA-F]{7})?")){
             let code = ((parseInt(txt, 16)).toString(2)).padStart(25, '0')
+            console.log("hello")
+            console.log(code)
             //console.log("LegendeSelector".concat(event.target.id.slice(-1)))
             UIgame.updateFromCode(code,document.getElementById("LegendeSelector".concat(event.target.id.slice(-1)))) 
             document.cookie = "LegendeSelector".concat(event.target.id.slice(-1)) +"="+txt+";"+"expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/; secure; samesite=strict"        
